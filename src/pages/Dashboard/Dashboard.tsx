@@ -3,12 +3,21 @@ import AssignmentList from "../../components/assignments/AssignmentList/Assignme
 
 function Dashboard() {
   return (
-    <main>
-      <h1>DueTrack</h1>
-      <p>Hold oversikt over innleveringsfristene dine.</p>
+    <main className="dashboard">
+      <header className="dashboard__header">
+        <div>
+          <h1 className="dashboard__title">DueTrack</h1>
+          <p className="dashboard__subtitle">
+            Hold oversikt over innleveringsfristene dine.
+          </p>
+        </div>
+      </header>
 
-      <section>
-        <h2>Innleveringer</h2>
+      <section className="dashboard__assignments">
+        <div className="dashboard__section-header">
+          <h2 className="dashboard__section-title">Innleveringer</h2>
+        </div>
+
         <AssignmentList />
       </section>
     </main>
