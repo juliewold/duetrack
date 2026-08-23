@@ -1,5 +1,5 @@
 import "./App.css";
-import AssignmentList from "./components/assignments/AssignmentList";
+import AssignmentList from "./components/assignments/AssignmentList/AssignmentList";
 
 function App() {
   return (

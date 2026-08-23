@@ -1,0 +1,49 @@
+.assignment-card {
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.assignment-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.assignment-card__course {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #6d28d9;
+}
+
+.assignment-card__status {
+  margin: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.assignment-card__title {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+.assignment-card__deadline {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.assignment-card__deadline p {
+  margin: 0;
+}

@@ -1,6 +1,6 @@
-import AssignmentCard from "./AssignmentCard";
-import { assignments } from "../../data/assignments";
-import { courses } from "../../data/courses";
+import AssignmentCard from "../AssignmentCard/AssignmentCard";
+import { assignments } from "../../../data/assignments";
+import { courses } from "../../../data/courses";
 
 function AssignmentList() {
   return (
