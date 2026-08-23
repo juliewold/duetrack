@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./AssignmentForm.css";
 import { courses } from "../../../data/courses";
+import type { Assignment } from "../../../types/Assignment";
 
-function AssignmentForm() {
+type AssignmentFormProps = {
+  onAddAssignment: (assignment: Assignment) => void;
+};
+
+function AssignmentForm({ onAddAssignment }: AssignmentFormProps) {
   const [title, setTitle] = useState("");
   const [courseId, setCourseId] = useState("");
   const [dueDate, setDueDate] = useState("");
@@ -10,11 +15,23 @@ function AssignmentForm() {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    console.log({
-      title,
+    if (!title || !courseId || !dueDate) {
+      return;
+    }
+
+    const newAssignment: Assignment = {
+      id: crypto.randomUUID(),
       courseId,
+      title,
       dueDate,
-    });
+      status: "not-started",
+    };
+
+    onAddAssignment(newAssignment);
+
+    setTitle("");
+    setCourseId("");
+    setDueDate("");
   }
 
   return (
@@ -54,10 +71,6 @@ function AssignmentForm() {
       />
 
       <button type="submit">Legg til innlevering</button>
-
-      <p>Oppgave: {title}</p>
-      <p>Fag: {courseId}</p>
-      <p>Frist: {dueDate}</p>
     </form>
   );
 }

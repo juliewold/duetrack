@@ -1,9 +1,13 @@
 import "./AssignmentList.css";
 import AssignmentCard from "../AssignmentCard/AssignmentCard";
-import { assignments } from "../../../data/assignments";
 import { courses } from "../../../data/courses";
+import type { Assignment } from "../../../types/Assignment";
 
-function AssignmentList() {
+type AssignmentListProps = {
+  assignments: Assignment[];
+};
+
+function AssignmentList({ assignments }: AssignmentListProps) {
   return (
     <div className="assignment-list">
       {assignments.map((assignment) => {

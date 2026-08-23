@@ -1,8 +1,18 @@
+import { useState } from "react";
 import "./Dashboard.css";
-import AssignmentList from "../../components/assignments/AssignmentList/AssignmentList";
 import AssignmentForm from "../../components/assignments/AssignmentForm/AssignmentForm";
+import AssignmentList from "../../components/assignments/AssignmentList/AssignmentList";
+import { assignments as initialAssignments } from "../../data/assignments";
+import type { Assignment } from "../../types/Assignment";
 
 function Dashboard() {
+  const [assignments, setAssignments] =
+    useState<Assignment[]>(initialAssignments);
+
+  function handleAddAssignment(assignment: Assignment) {
+    setAssignments((currentAssignments) => [...currentAssignments, assignment]);
+  }
+
   return (
     <main className="dashboard">
       <header className="dashboard__header">
@@ -13,20 +23,14 @@ function Dashboard() {
           </p>
         </div>
       </header>
+
       <section className="dashboard__assignments">
         <div className="dashboard__section-header">
           <h2 className="dashboard__section-title">Innleveringer</h2>
         </div>
 
-        <AssignmentForm />
-        <AssignmentList />
-      </section>
-      <section className="dashboard__assignments">
-        <div className="dashboard__section-header">
-          <h2 className="dashboard__section-title">Innleveringer</h2>
-        </div>
-
-        <AssignmentList />
+        <AssignmentForm onAddAssignment={handleAddAssignment} />
+        <AssignmentList assignments={assignments} />
       </section>
     </main>
   );
