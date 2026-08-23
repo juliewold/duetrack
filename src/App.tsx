@@ -1,7 +1,7 @@
 import "./App.css";
 import AssignmentCard from "./components/assignments/AssignmentCard";
 import { courses } from "./data/courses";
-import { it1901Assignments } from "./data/assignments";
+import { assignments } from "./data/assignments";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <section>
         <h2>Innleveringer</h2>
 
-        {it1901Assignments.map((assignment) => {
+        {assignments.map((assignment) => {
           const course = courses.find(
             (course) => course.id === assignment.courseId,
           );
