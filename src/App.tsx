@@ -1,7 +1,5 @@
 import "./App.css";
-import AssignmentCard from "./components/assignments/AssignmentCard";
-import { courses } from "./data/courses";
-import { assignments } from "./data/assignments";
+import AssignmentList from "./components/assignments/AssignmentList";
 
 function App() {
   return (
@@ -11,24 +9,7 @@ function App() {
 
       <section>
         <h2>Innleveringer</h2>
-
-        {assignments.map((assignment) => {
-          const course = courses.find(
-            (course) => course.id === assignment.courseId,
-          );
-
-          if (!course) {
-            return null;
-          }
-
-          return (
-            <AssignmentCard
-              key={assignment.id}
-              assignment={assignment}
-              course={course}
-            />
-          );
-        })}
+        <AssignmentList />
       </section>
     </main>
   );
