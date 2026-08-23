@@ -1,5 +1,6 @@
 import "./Dashboard.css";
 import AssignmentList from "../../components/assignments/AssignmentList/AssignmentList";
+import AssignmentForm from "../../components/assignments/AssignmentForm/AssignmentForm";
 
 function Dashboard() {
   return (
@@ -12,7 +13,14 @@ function Dashboard() {
           </p>
         </div>
       </header>
+      <section className="dashboard__assignments">
+        <div className="dashboard__section-header">
+          <h2 className="dashboard__section-title">Innleveringer</h2>
+        </div>
 
+        <AssignmentForm />
+        <AssignmentList />
+      </section>
       <section className="dashboard__assignments">
         <div className="dashboard__section-header">
           <h2 className="dashboard__section-title">Innleveringer</h2>
