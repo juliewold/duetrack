@@ -6,7 +6,7 @@ function Dashboard() {
     <main className="dashboard">
       <header className="dashboard__header">
         <div>
-          <h1 className="dashboard__title">DueTrack</h1>
+          <h1 className="dashboard__title">Frister</h1>
           <p className="dashboard__subtitle">
             Hold oversikt over innleveringsfristene dine.
           </p>
